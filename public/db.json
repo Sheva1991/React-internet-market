@@ -1,0 +1,24 @@
+{
+    "pizzas": [{
+            "id": 0,
+            "imageUrl": "https://academy.oetker.ru/upload/resize_cache/iblock/195/750_430_2/19519a82c8131d46d8e7a4718fb7e2d2.png",
+            "name": "Пепперони",
+            "types": [0, 1],
+            "sizes": [26, 30, 40],
+            "category": 0,
+            "rating": 4,
+            "price": 803
+        },
+        {
+            "id": 1,
+            "imageUrl": "https://cdpiz3.pizzasoft.ru/pf/content/0/169/image_5a42b1dd94fce.jpg",
+            "name": "Спайси",
+            "types": [0],
+            "sizes": [26, 30],
+            "category": 0,
+            "rating": 5,
+            "price": 1203
+        }
+
+    ]
+}
