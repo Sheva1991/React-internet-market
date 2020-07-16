@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 
-const SortPopUp = ({ items }) => {
+const SortPopUp = React.memo(({ items }) => {
     const [popUp, setPopUp] = useState(false)
     const [active, setActive] = useState(0)
     const refSort = useRef(null)
@@ -25,6 +25,7 @@ const SortPopUp = ({ items }) => {
     useEffect(() => {
         document.body.addEventListener('click', handleOutsideClick)
     }, [])
+
     return (
         <div className="sort" ref={refSort}>
             <div className="sort__label">
@@ -55,6 +56,6 @@ const SortPopUp = ({ items }) => {
             </div>}
         </div>
     )
-}
+})
 
 export default SortPopUp
