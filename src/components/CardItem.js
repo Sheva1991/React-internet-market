@@ -3,6 +3,7 @@ import Button from './Button'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
+
 const CardItem = ({ name, imageUrl, price, types, sizes }) => {
     const typeNames = ['тонкое', 'традиционное']
     const sizesName = [26, 30, 40]
@@ -15,6 +16,7 @@ const CardItem = ({ name, imageUrl, price, types, sizes }) => {
     const selectSize = (index) => {
         setActiveSize(index)
     }
+
     return (
         <div className="pizza-block">
             <img

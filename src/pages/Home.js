@@ -1,39 +1,54 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Categories from '../components/Categories'
 import SortPopUp from '../components/SortPopUp'
 import CardItem from '../components/CardItem'
 import { useSelector, useDispatch } from 'react-redux'
-import { setCategory } from '../redux/actions/filters'
+import { setCategory, setSortBy } from '../redux/actions/filters'
+import { fetchPizzas } from '../redux/actions/pizza';
+import CardItemPlaceholder from '../components/CardItemPlaceholder'
 
 const categoryes = ['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые']
 const sortItems = [
-    { name: 'популярности', type: 'popular' },
-    { name: 'цене', type: 'price' },
-    { name: 'алфавиту', type: 'alphabet' }]
+    { name: 'популярности', type: 'popular', order: 'desc' },
+    { name: 'цене', type: 'price', order: 'desc' },
+    { name: 'алфавиту', type: 'name', order: 'asc' }]
 
 
 const Home = () => {
     const dispatch = useDispatch()
     const items = useSelector(({ pizzas }) => pizzas.items)
+    const isLoaded = useSelector(({ pizzas }) => pizzas.isLoaded)
+    const { category, sortBy } = useSelector(({ filters }) => filters)
 
     const onSelectCategory = React.useCallback((index) => {
         dispatch(setCategory(index))
-    }, [])
+    }, [dispatch])
+
+    const selectSortBy = React.useCallback((type) => {
+        dispatch(setSortBy(type))
+    }, [dispatch])
+
+    useEffect(() => {
+        dispatch(fetchPizzas(sortBy, category))
+    }, [dispatch, category, sortBy])
 
     return (
 
         <div className="container">
             <div className="content__top">
                 <Categories
-                    onClickItem={onSelectCategory}
+                    activeCategory={category}
+                    onClickCategory={onSelectCategory}
                     items={categoryes} />
-                <SortPopUp items={sortItems} />
+                <SortPopUp activeSortType={sortBy.type} items={sortItems} onClickSortBy={selectSortBy} />
             </div>
             <h2 className="content__title">Все пиццы</h2>
             <div className="content__items">
-                {items && items.map((item) =>
-                    <CardItem key={item.id} {...item} />
-                )}
+                {isLoaded ? items && items.map((item) =>
+                    <CardItem key={item.id} {...item} isLoading={true} />
+                ) :
+                    Array(12).fill(0).map((item, index) =>
+                        <CardItemPlaceholder key={index} />)}
             </div>
         </div>
     )
