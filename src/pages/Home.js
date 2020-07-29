@@ -52,7 +52,7 @@ const Home = () => {
                 {isLoaded ? items && items.map((item) =>
                     <CardItem key={item.id} {...item}
                         onClickAddPizza={handleAddPizzaToCart}
-                        addedCount={cardItems[item.id] && cardItems[item.id].length}
+                        addedCount={cardItems[item.id] && cardItems[item.id].items.length}
                     />
                 ) :
                     Array(12).fill(0).map((item, index) =>
