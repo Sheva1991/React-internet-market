@@ -1,0 +1,267 @@
+@media screen and (max-width: 1200px) {
+    .content {
+        &__top {
+            align-items: flex-start
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    .pizza-block {
+        width: 45%;
+
+        &__title {
+            min-height: 50px;
+        }
+
+        &__image {
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .wrapper {
+        width: 95%;
+    }
+
+    .cart__item-img img {
+        width: 60px;
+        height: 100%;
+    }
+
+    .content {
+        &__top {
+            align-items: center;
+        }
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .categories {
+        position: relative;
+
+        &__list {
+            display: none;
+
+            &--opened {
+                display: flex;
+                position: absolute;
+                justify-content: center;
+                flex-direction: column;
+                z-index: 10;
+                background: rgba(0, 0, 0, 0.5);
+                padding: 10px;
+                top: 50px;
+            }
+
+            li {
+                margin-right: 0;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+        }
+
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .pizza-block {
+        &__image {
+            width: 80%;
+            height: 150px;
+        }
+
+        &__bottom {
+            flex-direction: column;
+        }
+
+        &__price {
+            font-size: 1rem;
+        }
+    }
+
+    .cart {
+        &__item {
+            &-info {
+                margin-right: 10px;
+            }
+
+            &-count {
+                b {
+                    padding: 0 5px;
+                }
+            }
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 450px) {
+    body {
+        padding: 25px 0;
+    }
+
+    .header {
+        padding: 20px 0;
+    }
+
+    .pizza-block {
+        width: 100%;
+
+        &__image {
+            width: 260px;
+            max-width: 80%;
+            height: 260px;
+        }
+
+        &__bottom {
+            flex-direction: row;
+
+        }
+
+        &__title {
+            min-height: auto;
+        }
+    }
+
+    .button {
+        font-size: 0.8rem;
+
+        &.go-back-btn {
+            margin-right: 10px;
+        }
+
+        &--cart {
+            padding: 10px 20px;
+
+            span {
+                line-height: 1;
+            }
+        }
+
+        &__delimiter {
+            margin: 5px;
+        }
+    }
+
+    .cart {
+        &__item {
+            flex-wrap: wrap;
+
+            &-img {
+                width: 30%;
+                margin-bottom: 20px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            &-info {
+                width: 60%;
+            }
+
+            &-count {
+                width: auto;
+                margin-right: 20px;
+            }
+
+            &-price {
+                width: auto;
+                margin-right: 20px;
+            }
+
+            &-remove {
+                width: auto;
+                position: relative;
+                right: 0;
+            }
+        }
+
+        &__bottom {
+            &-details {
+                div {
+                    font-size: 1.1rem;
+
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .header__logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .cart .content {
+        &__title {
+            font-size: 1.2rem;
+        }
+    }
+
+    .cart__bottom-buttons {
+        padding: 5px 20px;
+        width: auto;
+    }
+
+
+
+}
+
+@media screen and (max-width: 325px) {
+
+    .header__logo {
+        div {
+            p {
+                display: none;
+            }
+        }
+    }
+
+    .cart {
+        &__bottom-details {
+            flex-wrap: wrap;
+        }
+
+        &__clear {
+            svg {
+                margin-right: 0;
+            }
+        }
+
+        &__bottom {
+            margin: 25px 0;
+
+            &-buttons {
+                margin-top: 20px;
+
+                .button {
+                    padding: 5px 10px;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    .sort {
+        &__label {
+
+            b {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+
+}

@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-const Categories = React.memo(({ activeCategory, items, onClickCategory }) => {
+const Categories = React.memo(({ activeCategory, items, onClickCategory, onHandlerCategoies, menuActive }) => {
 
     return (
         <div className="categories">
-            <ul>
+            <div onClick={onHandlerCategoies} className='burger'>
+                <div className='burger__item'></div>
+                <div className='burger__item'></div>
+                <div className='burger__item'></div>
+            </div>
+            <ul className={menuActive ? 'categories__list categories__list--opened' : 'categories__list'}>
                 <li className={activeCategory === null ? 'active' : ''} onClick={() => onClickCategory(null)}>Все</li>
                 {items && items.map((item, index) => {
                     return (
@@ -19,7 +24,6 @@ const Categories = React.memo(({ activeCategory, items, onClickCategory }) => {
 })
 
 Categories.propTypes = {
-    // activeCategory: PropTypes.oneOf([PropTypes.number, null]),
     items: PropTypes.arrayOf(PropTypes.string).isRequired,
     onClickCategory: PropTypes.func
 

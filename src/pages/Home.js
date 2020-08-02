@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Categories from '../components/Categories'
 import SortPopUp from '../components/SortPopUp'
 import CardItem from '../components/CardItem'
@@ -16,14 +16,20 @@ const sortItems = [
 
 
 const Home = () => {
+    const [menuActive, setmenuActive] = useState(false)
     const dispatch = useDispatch()
     const items = useSelector(({ pizzas }) => pizzas.items)
     const isLoaded = useSelector(({ pizzas }) => pizzas.isLoaded)
     const cardItems = useSelector(({ cart }) => cart.items)
     const { category, sortBy } = useSelector(({ filters }) => filters)
 
+    const setMenuCategoiesClose = () => {
+        setmenuActive(!menuActive)
+    }
+
     const onSelectCategory = React.useCallback((index) => {
         dispatch(setCategory(index))
+        setmenuActive(false)
     }, [dispatch])
 
     const selectSortBy = React.useCallback((type) => {
@@ -44,19 +50,30 @@ const Home = () => {
                 <Categories
                     activeCategory={category}
                     onClickCategory={onSelectCategory}
-                    items={categoryes} />
+                    items={categoryes}
+                    onHandlerCategoies={setMenuCategoiesClose}
+                    menuActive={menuActive}
+                />
                 <SortPopUp activeSortType={sortBy.type} items={sortItems} onClickSortBy={selectSortBy} />
             </div>
             <h2 className="content__title">Все пиццы</h2>
             <div className="content__items">
-                {isLoaded ? items && items.map((item) =>
-                    <CardItem key={item.id} {...item}
-                        onClickAddPizza={handleAddPizzaToCart}
-                        addedCount={cardItems[item.id] && cardItems[item.id].items.length}
-                    />
-                ) :
-                    Array(12).fill(0).map((item, index) =>
-                        <CardItemPlaceholder key={index} />)}
+                {items && items.map((item, index) => {
+                    if (isLoaded) {
+                        return (
+                            <CardItem key={item.id} {...item}
+                                onClickAddPizza={handleAddPizzaToCart}
+                                addedCount={cardItems[item.id] && cardItems[item.id].items.length}
+                            />)
+                    } else {
+                        return (<CardItemPlaceholder key={index} />)
+                    }
+                }
+                )
+                    //  :
+                    //     Array(items.length).fill(0).map((item, index) =>
+                    //         <CardItemPlaceholder key={index} />)
+                }
             </div>
         </div>
     )

@@ -30,11 +30,12 @@ const CardItem = ({ id, name, imageUrl, price, types, sizes, onClickAddPizza, ad
 
     return (
         <div className="pizza-block">
-            <img
-                className="pizza-block__image"
-                src={imageUrl}
-                alt="Pizza"
-            />
+            <div className='pizza-block__image'>
+                <img
+                    src={imageUrl}
+                    alt="Pizza"
+                />
+            </div>
             <h4 className="pizza-block__title">{name}</h4>
             <div className="pizza-block__selector">
                 <ul>
@@ -55,7 +56,7 @@ const CardItem = ({ id, name, imageUrl, price, types, sizes, onClickAddPizza, ad
                 </ul>
             </div>
             <div className="pizza-block__bottom">
-                <div className="pizza-block__price">от {price} ₽</div>
+                <div className="pizza-block__price">от {price} грн</div>
                 <Button outline add
                     onClick={onAddPizza}>
                     <svg

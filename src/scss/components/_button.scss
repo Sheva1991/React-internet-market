@@ -11,6 +11,7 @@
   transition: background-color $duration ease-in-out, border-color $duration ease-in-out;
   border: 1px solid transparent;
   @include noselect();
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   &,
   span {
@@ -45,17 +46,18 @@
   }
 
   &--black {
-    background-color: $black;
+    background-color: #262626;
 
     &:hover,
     &:active {
-      background-color: lighten($color: $black, $amount: 10);
+      background-color: lighten($color: #262626, $amount: 10);
     }
   }
 
   &--outline {
     background-color: #fff;
     border-color: $orange;
+
     &,
     span {
       color: $orange;
@@ -134,6 +136,7 @@
     align-items: center;
     line-height: 23px;
     padding: 12px 25px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     svg {
       margin-right: 8px;

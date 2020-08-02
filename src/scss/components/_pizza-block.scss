@@ -1,23 +1,41 @@
 @import 'variables';
 
 .pizza-block {
-  width: 280px;
+  width: 30%;
   text-align: center;
+  margin: 0 1.5%;
   margin-bottom: 65px;
+  display: flex;
+  flex-direction: column;
 
-  &:not(:nth-of-type(4n)) {
-    margin-right: 35px;
-  }
+  // &:not(:nth-of-type(4n)) {
+  //   margin-right: 35px;
+  // }
 
   &__image {
     width: 260px;
-    min-height: 260px;
+    height: 260px;
+    align-self: center;
+    background-color: #000;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      max-width: 100%;
+      min-height: 100%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   &__title {
     font-size: 20px;
     font-weight: 900;
     letter-spacing: 1%;
+    margin-top: 10px;
     margin-bottom: 20px;
   }
 
@@ -27,6 +45,7 @@
     border-radius: 10px;
     flex-direction: column;
     padding: 6px;
+    color: #262626;
 
     ul {
       display: flex;

@@ -1,29 +1,25 @@
 @import 'variables';
 
 .categories {
-  ul {
+
+  &__list {
     display: flex;
-    // flex-wrap: wrap;
+    flex-wrap: wrap;
 
     li {
-      background-color: #f9f9f9;
+      background-color: $gray-line;
       padding: 13px 30px;
       border-radius: 30px;
       margin-right: 10px;
+      margin-bottom: 10px;
       font-weight: bold;
       cursor: pointer;
       transition: background-color 0.1s ease-in-out;
       @include noselect();
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
+      &.active,
       &:hover {
-        background-color: darken(#f9f9f9, 2%);
-      }
-
-      &:active {
-        background-color: darken(#f9f9f9, 5%);
-      }
-
-      &.active {
         background-color: #282828;
         color: #fff;
       }

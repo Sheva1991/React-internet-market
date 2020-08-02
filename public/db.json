@@ -5,8 +5,8 @@
             "name": "Пепперони Фреш с перцем",
             "types": [0, 1],
             "sizes": [26, 30, 40],
-            "price": 803,
-            "category": 0,
+            "price": 330,
+            "category": 3,
             "rating": 4
         },
         {
@@ -15,7 +15,7 @@
             "name": "Сырная",
             "types": [0],
             "sizes": [26, 40],
-            "price": 245,
+            "price": 345,
             "category": 1,
             "rating": 6
         },
@@ -26,7 +26,7 @@
             "types": [0],
             "sizes": [26, 40],
             "price": 295,
-            "category": 1,
+            "category": 2,
             "rating": 4
         },
         {
@@ -45,7 +45,7 @@
             "name": "Чизбургер-пицца",
             "types": [0, 1],
             "sizes": [26, 30, 40],
-            "price": 415,
+            "price": 215,
             "category": 3,
             "rating": 8
         },
@@ -55,8 +55,8 @@
             "name": "Крэйзи пепперони",
             "types": [0],
             "sizes": [30, 40],
-            "price": 580,
-            "category": 2,
+            "price": 280,
+            "category": 3,
             "rating": 2
         },
         {
@@ -65,8 +65,8 @@
             "name": "Пепперони",
             "types": [0, 1],
             "sizes": [26, 30, 40],
-            "price": 675,
-            "category": 1,
+            "price": 275,
+            "category": 3,
             "rating": 9
         },
         {
@@ -76,7 +76,7 @@
             "types": [0, 1],
             "sizes": [26, 30, 40],
             "price": 450,
-            "category": 4,
+            "category": 2,
             "rating": 10
         },
         {
@@ -85,7 +85,7 @@
             "name": "Четыре сезона",
             "types": [0, 1],
             "sizes": [26, 30, 40],
-            "price": 395,
+            "price": 305,
             "category": 5,
             "rating": 10
         },
@@ -95,29 +95,39 @@
             "name": "Овощи и грибы",
             "types": [0, 1],
             "sizes": [26, 30, 40],
-            "price": 285,
-            "category": 5,
+            "price": 225,
+            "category": 1,
             "rating": 7
         },
         {
             "id": 10,
-            "imageUrl": "https://academy.oetker.ru/upload/resize_cache/iblock/195/750_430_2/19519a82c8131d46d8e7a4718fb7e2d2.png",
-            "name": "Пепперони",
+            "imageUrl": "https://tick-time.ru/media/cache/frontend_product_show/uploads/products/6ad235e3a984c5ae65fc4c548eae4f04716128cc.png",
+            "name": "Дон Кебаб",
             "types": [0, 1],
             "sizes": [26, 30, 40],
             "category": 0,
             "rating": 4,
-            "price": 803
+            "price": 203
         },
         {
             "id": 11,
-            "imageUrl": "https://cdpiz3.pizzasoft.ru/pf/content/0/169/image_5a42b1dd94fce.jpg",
-            "name": "Спайси",
+            "imageUrl": "https://cdn.dodostatic.net/static/Img/Products/Pizza/ru-RU/7d2d57ef-1e81-4e96-9558-a1e0321471e7.jpg",
+            "name": "Додо Пицца",
             "types": [0],
             "sizes": [26, 30],
             "category": 0,
             "rating": 5,
-            "price": 1203
+            "price": 250
+        },
+        {
+            "id": 12,
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSpGO8YTcrwL3I2TZ9L_XPBOWOVd91yV7bUDg&usqp=CAU",
+            "name": "Закрытая Пицца",
+            "types": [0],
+            "sizes": [26, 30],
+            "category": 4,
+            "rating": 6,
+            "price": 300
         }
     ]
 }
